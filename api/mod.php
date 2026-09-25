@@ -1,0 +1,1 @@
+<?php require __DIR__.'/../config.php';$id=(int)($_GET['id']??0);foreach(load_mods() as $m)if((int)$m['id']===$id){$m['thumbnail_url']='/uploads/thumbs/'.$m['thumbnail'];$m['download_url']='/api/download.php?id='.$id;json_response(['success'=>true,'mod'=>$m]);}json_response(['success'=>false,'error'=>'Mod not found.'],404);
