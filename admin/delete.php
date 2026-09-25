@@ -1,0 +1,1 @@
+<?php session_start();require __DIR__.'/../config.php';require_admin();$id=(int)($_GET['id']??0);$mods=load_mods();$new=[];$found=null;foreach($mods as $m){if((int)$m['id']===$id)$found=$m;else$new[]=$m;}if(!$found)exit('Mod not found.');@unlink(MOD_DIR.$found['filename']);@unlink(THUMB_DIR.$found['thumbnail']);save_mods($new);header('Location:index.php');exit;
