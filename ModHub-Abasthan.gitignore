@@ -1,0 +1,6 @@
+uploads/mods/*
+uploads/thumbs/*
+data/mods.json
+!uploads/mods/.htaccess
+!uploads/thumbs/.htaccess
+!data/.htaccess
