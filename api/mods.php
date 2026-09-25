@@ -1,0 +1,1 @@
+<?php require __DIR__.'/../config.php';$mods=load_mods();usort($mods,fn($a,$b)=>strcmp($b['created_at']??'',$a['created_at']??''));foreach($mods as &$m){$m['thumbnail_url']='/uploads/thumbs/'.$m['thumbnail'];$m['download_url']='/api/download.php?id='.(int)$m['id'];}unset($m);json_response(['success'=>true,'count'=>count($mods),'mods'=>$mods]);
